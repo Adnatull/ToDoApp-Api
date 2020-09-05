@@ -34,7 +34,12 @@ namespace ToDoApp.WebApi.Middleware
                     case Core.Application.Exceptions.ApiException e:
                         // custom application error
                         response.StatusCode = (int)HttpStatusCode.BadRequest;
-                        break; 
+                        break;
+                    case Core.Application.Exceptions.ValidationException e:
+                        // custom application error
+                        response.StatusCode = (int)HttpStatusCode.BadRequest;
+                        responseModel.Errors = e.Errors;
+                        break;
                     case KeyNotFoundException e:
                         // not found error
                         response.StatusCode = (int)HttpStatusCode.NotFound;

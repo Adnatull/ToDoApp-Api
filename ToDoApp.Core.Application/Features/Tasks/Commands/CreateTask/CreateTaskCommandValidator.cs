@@ -9,8 +9,8 @@ namespace ToDoApp.Core.Application.Features.Tasks.Commands.CreateTask
     {
         public CreateTaskCommandValidator()
         {
-            RuleFor(x => x.Title).NotEmpty();
-            
+            RuleFor(x => x.Title).NotEmpty().WithMessage("{PropertyName} should be not empty. NEVER!");
+
         }
     }
 }
