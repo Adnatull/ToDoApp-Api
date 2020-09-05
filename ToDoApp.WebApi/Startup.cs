@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 using ToDoApp.Application;
 using ToDoApp.Infrastructure.Persistence;
 using ToDoApp.WebApi.Extensions;
@@ -43,6 +44,7 @@ namespace ToDoApp.WebApi
             app.UseAuthorization();
             app.UseSwaggerExtension();
             app.UseErrorHandlingMiddleware();
+            app.UseSerilogRequestLogging();
 
 
 

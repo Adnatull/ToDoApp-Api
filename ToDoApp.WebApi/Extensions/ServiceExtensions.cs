@@ -2,7 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System;
-using ToDoApp.WebApi.ApiVersioningForSwagger;
 
 namespace ToDoApp.WebApi.Extensions
 {
@@ -25,9 +24,7 @@ namespace ToDoApp.WebApi.Extensions
                         Url = new Uri("http://adnatull.github.io"),
                     }
                 });
-                //c.OperationFilter<RemoveVersionParameterFilter>();
-                //c.DocumentFilter<ReplaceVersionWithExactValueInPathFilter>();
-                //c.EnableAnnotations();
+          
             });
         }
         public static void AddApiVersioningExtension(this IServiceCollection services)
